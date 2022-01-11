@@ -1,0 +1,15 @@
+CC=g++ -c -Wall -ansi -pedantic
+
+runMe: myTest.o MovieCollection.o Movie.o 
+	g++ -o runMe myTest.o MovieCollection.o Movie.o 
+
+
+myTest.o: myTest.cpp MovieCollection.hpp Movie.hpp 
+	$(CC) myTest.cpp
+	
+MovieCollection.o: MovieCollection.hpp MovieCollection.cpp
+	$(CC) MovieCollection.cpp
+	
+Movie.o: Movie.hpp Movie.cpp
+	$(CC) Movie.cpp
+	
